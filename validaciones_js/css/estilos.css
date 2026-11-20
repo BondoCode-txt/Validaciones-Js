@@ -1,0 +1,237 @@
+/* ==========================================================
+   ESTILO ANIME SHONEN / PSICODÉLICO & NEÓN
+   ========================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap');
+
+:root {
+    --anime-cyan: #00f0ff;
+    --anime-magenta: #ff007f;
+    --anime-yellow: #ffe600;
+    --anime-violet: #9d00ff;
+    --bg-dark: #07070f;
+    --card-bg: rgba(15, 15, 26, 0.85);
+    --error-neon: #ff3366;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    /* Fondo con gradiente psicodélico animado y líneas de poder */
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(157, 0, 255, 0.25) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(255, 0, 127, 0.25) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.15) 0%, transparent 50%);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    overflow-x: hidden;
+}
+
+/* ==========================================================
+   CONTENEDOR / TARJETA CON BORDE NEÓN MÁGICO
+   ========================================================== */
+form#formulario {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid rgba(0, 240, 255, 0.4);
+    box-shadow: 
+        0 0 30px rgba(157, 0, 255, 0.3),
+        inset 0 0 20px rgba(0, 240, 255, 0.1);
+    position: relative;
+    animation: flotarCard 6s ease-in-out infinite;
+}
+
+@keyframes flotarCard {
+    0%, 100% { transform: translateY(0); box-shadow: 0 0 30px rgba(157, 0, 255, 0.3), 0 0 10px rgba(0, 240, 255, 0.2); }
+    50% { transform: translateY(-6px); box-shadow: 0 0 45px rgba(255, 0, 127, 0.4), 0 0 20px rgba(255, 230, 0, 0.3); }
+}
+
+/* Título Estilo Shonen */
+form#formulario h1 {
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, var(--anime-cyan), var(--anime-magenta), var(--anime-yellow));
+    -webkit-background-clip: text;
+    background-clip: text; /* <--- Agrega esta línea para quitar la advertencia */
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(255, 0, 127, 0.5);
+    margin-bottom: 8px;
+}
+
+
+form#formulario > p {
+    color: #a5b4fc;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================
+   CAMPOS DE ENTRADA (INPUTS Y SELECTS)
+   ========================================================== */
+.grupo {
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo label {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--anime-cyan);
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.grupo input[type="text"],
+.grupo input[type="number"],
+.grupo input[type="password"],
+.grupo select {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(5, 5, 10, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    font-size: 16px;
+    color: #fff;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efecto Maquiavélico al hacer Focus (Aura Shonen) */
+.grupo input:focus,
+.grupo select:focus {
+    border-color: var(--anime-magenta);
+    background: rgba(15, 5, 25, 0.95);
+    box-shadow: 0 0 20px var(--anime-magenta), inset 0 0 10px rgba(255, 0, 127, 0.3);
+    transform: scale(1.01);
+}
+
+.grupo select {
+    cursor: pointer;
+}
+
+/* ==========================================================
+   CHECKBOX PSICODÉLICO (TÉRMINOS)
+   ========================================================== */
+.grupo.terminos {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px dashed rgba(0, 240, 255, 0.3);
+}
+
+.grupo.terminos label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #e2e8f0;
+    text-transform: none;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.grupo.terminos input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--anime-magenta);
+    cursor: pointer;
+}
+
+/* ==========================================================
+   MENSAJES DE ERROR (<small>)
+   ========================================================== */
+small {
+    font-size: 12px;
+    color: var(--error-neon);
+    margin-top: 6px;
+    font-weight: 700;
+    min-height: 16px;
+    display: block;
+    text-shadow: 0 0 8px rgba(255, 51, 102, 0.4);
+}
+
+/* ==========================================================
+   BOTÓN DE PODER (SUBMIT)
+   ========================================================== */
+button#btnRegistrar {
+    width: 100%;
+    background: linear-gradient(135deg, var(--anime-magenta), var(--anime-violet));
+    color: #ffffff;
+    border: none;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    box-shadow: 0 0 25px rgba(255, 0, 127, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+button#btnRegistrar::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+button#btnRegistrar:hover::after {
+    opacity: 1;
+    transform: rotate(45deg) translate(50%, 50%);
+}
+
+button#btnRegistrar:hover {
+    background: linear-gradient(135deg, var(--anime-cyan), var(--anime-magenta));
+    box-shadow: 0 0 35px var(--anime-cyan), 0 0 15px var(--anime-magenta);
+    transform: translateY(-3px) scale(1.02);
+}
+
+button#btnRegistrar:active {
+    transform: translateY(0);
+}
+
+/* Mensaje final */
+#mensajeFinal {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 800;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
